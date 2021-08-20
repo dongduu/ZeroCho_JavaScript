@@ -14,11 +14,15 @@
             this.value='day';
             
             var Alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < Alist.length) {
+            // var i = 0;
+            // while(i < Alist.length) {
+            //     console.log(Alist[i]);
+            //     Alist[i].style.color = 'pink';
+            //     i = i +1;
+            // }
+            for(var i = 0; i < Alist.length; i+=1) {
                 console.log(Alist[i]);
                 Alist[i].style.color = 'pink';
-                i = i +1;
             }
         } else {
             target.style.backgroundColor='white';

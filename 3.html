@@ -3,31 +3,33 @@
     <head>
         <title>WEB1 - JavaScript</title>
         <meta charset="utf-8">
-    </head>
-    <body>
-        <h1><a href="index.html">WEB</a></h1>
-        <input type="button" value="night" onclick="
+    <script>
+    function nightDayHandler(self) {
         var target = document.querySelector('body')
-        if (this.value==='night') {
+        if (self.value==='night') {
             target.style.backgroundColor='black';
             target.style.color='White';
-            this.value='day';
+            self.value='day';
             
             var Alist = document.querySelectorAll('a');
-            // var i = 0;
-            // while(i < Alist.length) {
-            //     console.log(Alist[i]);
-            //     Alist[i].style.color = 'pink';
-            //     i = i +1;
-            // }
-            for(var i = 0; i < Alist.length; i+=1) {
+            var i = 0;
+            while(i < Alist.length) {
                 console.log(Alist[i]);
                 Alist[i].style.color = 'pink';
+                i = i +1;
             }
+            // for(var i = 0; i < Alist.length; i+=1) {
+            //     console.log(Alist[i]);
+            //     Alist[i].style.color = 'pink';
+            // }
+
+
+
+            
         } else {
             target.style.backgroundColor='white';
             target.style.color='black';
-            this.value='night';
+            self.value='night';
 
             var Alist = document.querySelectorAll('a');
             var i = 0;
@@ -37,7 +39,17 @@
                 i = i +1;
             }
         }
+    }
+    </script>
+    </head>
+    <body>
+        <h1><a href="index.html">WEB</a></h1>
+        <input type="button" value="night" onclick="
+        nightDayHandler(this);
         ">
+         <input type="button" value="night" onclick="
+         nightDayHandler(this);
+         ">
         <ol>
             <li><a href="1.html">HTML</a></li>
             <li><a href="2.html">CSS</a></li>
@@ -47,16 +59,5 @@
         <p>
             At Code Platoon, we track national demand for programming languages so that our Veterans and military spouses are trained with the best tools for a career in software development. When you’re deciding which programming language to learn, the following demand-based insights complement a much broader strategy.
         </p>
-        <input type="button" value="night" onclick="
-        if (this.value==='night') {
-            document.querySelector('body').style.backgroundColor='black';
-            document.querySelector('body').style.color='White';
-            this.value='day'
-        } else {
-            document.querySelector('body').style.backgroundColor='white';
-            document.querySelector('body').style.color='black';
-            this.value='night'
-        }
-        ">
     </body>
 </html>

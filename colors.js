@@ -24,9 +24,9 @@ function nightDayHandler(self) {
         self.value='day';
         Links.setColor('pink');
     } else {
-        Body.setBackgroundColor('white');
+        Body.setBackgroundColor('ivory'); 
         Body.setColor('black');
         self.value='night';
-        Links.setColor('purple');
+        Links.setColor('brown');
     }
 }

@@ -22,3 +22,19 @@ let add = 'B';
         default:
             console.log('아무것도 일치하지 않음');
     }
+<!-- 조건부 연산자 사용 -->
+let condition = true;
+let value = condition ? '참' : '거짓';
+console.log(value);
+===============================
+if (condition) {
+  value = '참';
+} else {
+  '거짓';
+}
+  console.log(value);
+<!-- 조건부 연산자의 중첩 사용 -->
+let condition1 = true;
+let condition2 = false;
+let value = condition1 ? (condition2 ? '둘 다 참' : 'condition1만 참') : 'condition1이 거짓';
+console.log(value);

@@ -64,4 +64,48 @@ function a(w, x) {
 a('Hello', 'parameter', 'argument');
     > a('Hello', 'parameter')
 
+// 객체 리터럴
+const dongdu = {
+    name: '이동주',
+    year: 2000,
+    month: 04,
+    date: 12,
+    gender: 'F',
+};
+console.log(dongdu.name);
+console.log(dongdu['name']);
+console.log(dongdu.year);
+console.log(dongdu['year']);
+
+dongdu.year = 2001; // 속성 수정
+console.log(dongdu.year);
+
+dongdu.age = 22; // 속성 추가
+console.log(dongdu.age);
+
+delete dongdu.name; // 속성 제거
+console.log(dongdu.name);
+    > undefined
+
+// 메서드 이해하기
+const debug = {
+    log: function(value) { // 객체의 속성값을 함수로 넣었을 때, 그것을 특별히 메서드라고 함
+        console.log(value);
+    },
+};
+debug.log('Heelo, Method')
+
+// 객체 간의 비교
+{} === {} // 객체(배열, 함수 포함)끼리는 모양이 같아도 항상 false
+    > false
+
+// 객체 간의 비교에서 true가 나올 수 있게 하는 방법(메모리형태로 생각)
+const a = {name: dongdu};
+const array = [1, 2, a];
+console.log(a === array[2]);
+-----------------------------
+const c = {name: 'dd'};
+const d = c; 
+c.name = 'hero';
+console.log(c.name);
 </script>

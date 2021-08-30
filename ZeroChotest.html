@@ -118,34 +118,14 @@ const f = (x, y, z) => x*y*z; // 중괄호와 리턴 생략 가능
 f(3, 3, 4);
     > 24
 
-// 객체 리터럴
-const dongdu = {
-    name: '이동주',
-    year: 2000,
-    month: 04,
-    date: 12,
-    gender: 'F',
-};
-console.log(dongdu.name);
-console.log(dongdu['name']);
-console.log(dongdu.year);
-console.log(dongdu['year']);
-
-dongdu.year = 2001; // 속성 수정
-console.log(dongdu.year);
-
-dongdu.age = 22; // 속성 추가
-console.log(dongdu.age);
-
-delete dongdu.name; // 속성 제거
-console.log(dongdu.name);
-    > undefined
-
-// 메서드 이해하기
-const debug = {
-    log: function(value) { // 객체의 속성값을 함수로 넣었을 때, 그것을 특별히 메서드라고 함
-        console.log(value);
+// 다음과 같이 객체 안에 객체가 있을 때, '조' 값에 접근하는 방법은 무엇일까요?
+const zerocho = {
+    name: {
+        first: '현영',
+        last: '조',
     },
+    gender: 'm',
 };
-debug.log('Heelo, Method')
+> zerocho.name.last
+
 </script>

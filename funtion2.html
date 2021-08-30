@@ -1,0 +1,42 @@
+<script>
+function a( ) { } // 함수선언문(보통 세미콜론을 붙이지 않는다.)
+const b = function( ) { }; //함수표현식
+const c = ( ) => { }; // 화살표함수
+a( ); // 호출
+
+function d() {
+    return '반환값'; // 돌려주는 값 지정
+}
+d();
+    > "반환값"
+
+function e() {
+    return '반환값'; // 함수의 종료를 의미
+    console.log('hello'); // 함수가 위에서 종료되어 실행되지 못함
+}
+e();
+    > "반환값"
+
+function f() {
+    return ; // undifined 생략(원래 기복적으로 항상 마지막열에 있음)
+}
+f();
+    > undifined
+
+function g() {
+    return [1,5]; // 돌려주는 값 지정
+}
+g();
+    > (2) [1,5]
+
+function h() {
+    if (false) {
+        return;
+    } else {
+        console.log("실행됩니다.");
+    }
+}
+a();
+    > "실행됩니다."
+
+</script>

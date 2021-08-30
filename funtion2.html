@@ -39,4 +39,30 @@ function h() {
 a();
     > "실행됩니다."
 
+// parameter(매개변수)과 argument(인수)
+function a(parameter) {
+    console.log(parameter);
+}
+a(argument);
+    > argument
+
+function a(w, x, y, z) {
+    console.log(w, x, y, z); // 매개변수와 인수가 여러개여도 가능
+}
+a('Hello', 'parameter', 'argument');
+    > a('Hello', 'parameter', 'argument', undefined)
+
+function add(x, y) {
+    return(x + y);
+}
+a(3, 5);
+    > 8
+
+function a(w, x) {
+    console.log(w, x); // 매개변수와 인수가 여러개여도 가능
+}
+a('Hello', 'parameter', 'argument');
+    > a('Hello', 'parameter')
+
+
 </script>

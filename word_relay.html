@@ -17,8 +17,12 @@ const number = parseInt(prompt('몇 명이 참가하나요?'), 10); //사용자�
 alert(number); // 경고메세지
 const yesOrno = confirm('맞나요?'); // 확인
 
-document.querySelector('#order') // 아이디는 앞에 #, 클래스는 앞에 .을 붙임
-document.querySelector(선택자 내부선택자 내부선택자 ,,,) // 자식과 자손,,너무 복잡한 태그는 아이디를 부여
+document.querySelector('input').addEventListener('input', (event) => { // 이벤트, 이벤트 타겟 벨류: 입력값을 보여줌
+  console.log('글자 입력', event.target.value);
+});
+document.querySelector('button').addEventListener('click', function() { // 이벤트리스너의 리스너 함수(클릭 후 콜백함수),(익명함수): 어떤 동작을 실행 한 후 연이어서 실행되는 함수
+  console.log('버튼 클릭');
+});
 </script>
 </body>
 </html>

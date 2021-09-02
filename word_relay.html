@@ -13,16 +13,29 @@
 <input type="text">
 <button>입력</button>
 <script>
-const number = parseInt(prompt('몇 명이 참가하나요?'), 10); //사용자로부터 값을 전달받음
-alert(number); // 경고메세지
-const yesOrno = confirm('맞나요?'); // 확인
+const number = Number(prompt('몇 명이 참가하나요?')); 
+const $button = document.querySelector('button');
+const $input = document.querySelector('input');
+const $word = document.querySelector('#word');
+let word; // 제시어
+let newWord; // 새로 입력한 단어
 
-document.querySelector('input').addEventListener('input', (event) => { // 이벤트, 이벤트 타겟 벨류: 입력값을 보여줌
-  console.log('글자 입력', event.target.value);
-});
-document.querySelector('button').addEventListener('click', function() { // 이벤트리스너의 리스너 함수(클릭 후 콜백함수),(익명함수): 어떤 동작을 실행 한 후 연이어서 실행되는 함수
-  console.log('버튼 클릭');
-});
+const onClickButton = () => {
+  if(!word) { // 제시어가 비어 있는가?
+    // 비어 있다.
+    word = newWord; // 입력한 단어가 제시어가 된다.
+    $word.textContent = word;
+    $input.value = ' '; // 사용자 입력창은 대부분 벨류 나머지는 보통 텍스트콘텐트 
+  } else {
+    // 비어 있지 않다.
+  }
+};
+const onInput = (event) => {
+  newWord = event.target.value;
+};
+
+$button.addEventListener('click', onClickButton);
+$input.addEventListener('input', onInput);
 </script>
 </body>
 </html>

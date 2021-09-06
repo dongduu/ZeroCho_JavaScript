@@ -25,7 +25,7 @@ if(number) {
   let newWord; 
 
   const onClickButton = () => {
-    if(newWord.length === 3 && (!word || (word[word.length - 1] === newWord[0])) { // 제시어가 비어 있는가? 입력한 단어가 올바른가?
+    if(newWord.length === 3 && (!word || (word[word.length - 1] === newWord[0]))) { // 제시어가 비어 있는가? 입력한 단어가 올바른가?
       word = newWord; 
       $word.textContent = word; // 화면을 바꾸는 것
       const order = Number($order.textContent);

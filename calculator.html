@@ -45,11 +45,15 @@
     const $operator = document.querySelector('#operator');
     const $result = document.querySelector('#result');
     const onClickNumber = (event) => { // 고차함수(함수가 함수를 포함한다(return 함수))
-        if (operator) { // 연산자가 비어있지 않다
-            numTwo += event.target.textContent; // 내가 클릭한 버튼의 이름(문자열)을 가져옴
-        } else { // 연산자가 비어있다
+        if (!operator) { // 연산자가 없다
             numOne += event.target.textContent;
+            $result.value += event.target.textContent;
+            return;
         }
+        if(!numTwo) { // 연산자가 있다
+            $result.value = '';
+        }
+        numTwo += event.target.textContent; // 내가 클릭한 버튼의 이름(문자열)을 가져옴
         $result.value += event.target.textContent;
     };
     document.querySelector('#num-0').addEventListener('click', onClickNumber);

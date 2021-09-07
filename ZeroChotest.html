@@ -143,4 +143,15 @@ select.value
 div.textContent
 texttarea.value
 span.textContent
+
+// 다음 코드의 console.log 값을 구하시오
+const hof = (a) => (b) => (c) => {
+    return a + (b * c);
+};
+const frist = hof(3);
+const second = frist(4);
+const third = second(5);
+console.log(third);
+
+// 정답 23,,,,,,,,,,,,인데 모르겠어요ㅠㅠㅠ
 </script>

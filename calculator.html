@@ -56,6 +56,7 @@
         numTwo += event.target.textContent; // 내가 클릭한 버튼의 이름(문자열)을 가져옴
         $result.value += event.target.textContent;
     };
+
     document.querySelector('#num-0').addEventListener('click', onClickNumber);
     document.querySelector('#num-1').addEventListener('click', onClickNumber);
     document.querySelector('#num-2').addEventListener('click', onClickNumber);
@@ -107,7 +108,6 @@
         numTwo = '';
         $operator.value = '';
         $result.value = '';
-
     });
 </script>
 </body>

@@ -6,14 +6,26 @@
 </head>
 <body>
     <form id="form">
-        <input type="text" id="input"> // 대부분 인풋이 있을 때 폼으로 감싼다.
+        <input type="text" id="input">
         <button>확인</button>
     </form>
-    <div id="logs"></div> // 기록이 차곡차곡 쌓일 예정
+    <div id="logs"></div>
     <script>
         const $input = document.querySelector('#input');
         const $form = document.querySelectorAll(#form);
         const $logs = document.querySelector(#logs);
+
+        const numbers = []; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        for(let i = 0; i < 9; i += 1) {
+            numbers.push(i + 1);
+        }
+        const answer = [];
+        for(let i = 0; i <= 3; i += 1) { // 네 번 반복
+            const index = Math.floor(Math.random() * (numbers.length));
+            answer.push(numbers[index]); // numbers 배열에서 index 배열로 보내줌
+            numbers.splice(index, 1); // 뽑은 숫자를 빼줌
+        }
+        console.log(answer);
     </script>
 </body>
 </html>

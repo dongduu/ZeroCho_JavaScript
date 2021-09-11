@@ -148,10 +148,36 @@ span.textContent
 const hof = (a) => (b) => (c) => {
     return a + (b * c);
 };
-const frist = hof(3);
-const second = frist(4);
+const first = hof(3);
+const second = first(4);
 const third = second(5);
 console.log(third);
 
-// 정답 23,,,,,,,,,,,,인데 모르겠어요ㅠㅠㅠ
+// 정답 23
+
+// 2에서 5까지의 숫자를 뽑고 싶습니다. 제대로 동작하도록 (가)~(라)를 모두 채우세요.
+//코드 1
+const answer = [];
+for (let n = 0; n < (가); n++) {
+    answer.push(n + 2);
+} // (가) = 4
+
+// 코드 2
+const answer = [];
+for (let n = 0; n <= (나); n++) {
+    answer.push(n + 2);
+} // (나) = 3
+
+// 코드 3
+const answer = [];
+for (let n = 1; n < (다); n++) {
+    answer.push(n + 1);
+
+} // (다) = 5
+
+// 코드 4
+const answer = [];
+for (let n = 1; n <= (라); n++) {
+    amswer.push(n + 1); 
+} // (라) = 4
 </script>

@@ -5,23 +5,23 @@
     <title>숫자야구</title>
 </head>
 <body>
-    <form id="form">
-        <input type="text" id="input">
-        <button>확인</button>
-        <!-- 버튼 달린 인풋은 폼으로 감싼다 -->
-    </form>
-    <div id="logs"></div>
-    <script>
+<form id="form">
+    <input type="text" id="input">
+    <button>확인</button>
+    <!-- 버튼 달린 인풋은 폼으로 감싼다 -->
+</form>
+<div id="logs"></div>
+<script>
     const $input = document.querySelector('#input');
-    const $form = document.querySelectorAll('#form');
+    const $form = document.querySelector('#form');
     const $logs = document.querySelector('#logs');
 
     const numbers = []; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    for(let i = 0; i < 9; i += 1) {
-        numbers.push(i + 1);
+    for(let n = 0; n < 9; n += 1) {
+        numbers.push(n + 1);
     }
     const answer = [];
-    for(let i = 0; i <= 3; i += 1) { // 네 번 반복
+    for(let n = 0; n <= 3; n += 1) { // 네 번 반복
         const index = Math.floor(Math.random() * (numbers.length));
         answer.push(numbers[index]); // numbers 배열에서 index 배열로 보내줌
         numbers.splice(index, 1); // 뽑은 숫자를 빼줌
@@ -29,14 +29,30 @@
     console.log(answer);
 
     const tries = [];
-    function checkInput(input) {}
+    function checkInput(input) { // 검사하는 코드
+        if (input.length !== 4) { // 길이가 4가 아닌가?
+            return alert('4자리 숫자를 입력해 주세요.');
+        }
+        if (new Set(input).size !== 4) { // 중복된 숫자가 있는가?(중복된 숫자를 제외한 후 4자리 숫자가 되는가?) (new Set: 중복이 없는 배열 size로 개수 검사)
+            return alert('중복되지 않게 입력해 주세요.');
+        }
+        if (tries.includes(input)) { // 이미 시도한 값인가?(includes: 배열에 이 값이 들어있는가?)
+            return alert('이미 시도한 값입니다.');
+        }
+        return true;
+    } 
 
-    $form.addEventListener('submit', (event) => { // 폼의 기본 동작은 새로코침
+    $form.addEventListener( 'submit', (event) => { // 폼의 기본 동작은 새로코침
         event.preventDefault(); // 기본 동작 막기
         const value = $input.value;
-        $input.value = '';
-        const valid = checkInput(value); // 검사하는 코드 
+        $input.value = ''; // 다음 값 쉽게 입력하라고 센스~
+        if (checkInput(value)) {
+            // 입력값 문제 없음
+            tries.push(value);
+        } else {
+            // 에러 있음
+        }
     });
-    </script>
+</script>
 </body>
 </html>

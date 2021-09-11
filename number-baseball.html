@@ -8,24 +8,35 @@
     <form id="form">
         <input type="text" id="input">
         <button>확인</button>
+        <!-- 버튼 달린 인풋은 폼으로 감싼다 -->
     </form>
     <div id="logs"></div>
     <script>
-        const $input = document.querySelector('#input');
-        const $form = document.querySelectorAll(#form);
-        const $logs = document.querySelector(#logs);
+    const $input = document.querySelector('#input');
+    const $form = document.querySelectorAll('#form');
+    const $logs = document.querySelector('#logs');
 
-        const numbers = []; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        for(let i = 0; i < 9; i += 1) {
-            numbers.push(i + 1);
-        }
-        const answer = [];
-        for(let i = 0; i <= 3; i += 1) { // 네 번 반복
-            const index = Math.floor(Math.random() * (numbers.length));
-            answer.push(numbers[index]); // numbers 배열에서 index 배열로 보내줌
-            numbers.splice(index, 1); // 뽑은 숫자를 빼줌
-        }
-        console.log(answer);
+    const numbers = []; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for(let i = 0; i < 9; i += 1) {
+        numbers.push(i + 1);
+    }
+    const answer = [];
+    for(let i = 0; i <= 3; i += 1) { // 네 번 반복
+        const index = Math.floor(Math.random() * (numbers.length));
+        answer.push(numbers[index]); // numbers 배열에서 index 배열로 보내줌
+        numbers.splice(index, 1); // 뽑은 숫자를 빼줌
+    }
+    console.log(answer);
+
+    const tries = [];
+    function checkInput(input) {}
+
+    $form.addEventListener('submit', (event) => { // 폼의 기본 동작은 새로코침
+        event.preventDefault(); // 기본 동작 막기
+        const value = $input.value;
+        $input.value = '';
+        const valid = checkInput(value); // 검사하는 코드 
+    });
     </script>
 </body>
 </html>

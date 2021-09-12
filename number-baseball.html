@@ -42,16 +42,23 @@
         return true;
     } 
 
-    $form.addEventListener( 'submit', (event) => { // 폼의 기본 동작은 새로코침
+    $form.addEventListener( 'submit', (event) => { // 폼의 기본 동작은 새로고침
         event.preventDefault(); // 기본 동작 막기
         const value = $input.value;
         $input.value = ''; // 다음 값 쉽게 입력하라고 센스~
-        if (checkInput(value)) {
-            // 입력값 문제 없음
-            tries.push(value);
-        } else {
-            // 에러 있음
+        if(!checkInput(value)) {
+            return; // 에러 있음
+        } 
+        if (answer.join('') === value) { // join: 배열을 문자열로 바꿈 => [3, 1, 4, 6] -> '3146'(콤마가 없으면 반점이 생김) <-> split
+            $logs.textContent ='홈런!';
+            return;
         }
+        if (tries.length >= 9) {
+            const message = document.createTextNode(`패배! 정답은 ${answer.join('')`});
+            $logs.appendChild(message); // append: 기존에 있던 문자열 + 추가할 문자 + ...
+            return;
+        // 몇 스트라이크 몇 볼인지 검사
+        tries.push(value);
     });
 </script>
 </body>

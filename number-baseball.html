@@ -47,16 +47,18 @@
         const value = $input.value;
         $input.value = ''; // 다음 값 쉽게 입력하라고 센스~
         if (!checkInput(value)) {
-            return; // 에러 있음
+            return; 
         } 
+        // 입력값 문제없음
         if (answer.join('') === value) { // join: 배열을 문자열로 바꿈 => [3, 1, 4, 6] -> '3146'(콤마가 없으면 반점이 생김) <-> split
-            $logs.textContent ='홈런!';
+            $logs.textContent = '홈런!';
             return;
         }
         if (tries.length >= 9) {
             const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
             $logs.appendChild(message); 
             return;
+        }
         // 몇 스트라이크 몇 볼인지 검사
         let strike = 0;
         let ball = 0;
@@ -73,8 +75,7 @@
         }
         $logs.append(`${value}: ${strike} 스트라이크 ${ball} 볼`, document.createElement('br'));
         tries.push(value);
-        }
-    })
+        })
 </script>
 </body>
 </html>

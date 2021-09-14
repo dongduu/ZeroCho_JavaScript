@@ -46,7 +46,7 @@
         event.preventDefault(); // 기본 동작 막기
         const value = $input.value;
         $input.value = ''; // 다음 값 쉽게 입력하라고 센스~
-        if(!checkInput(value)) {
+        if (!checkInput(value)) {
             return; // 에러 있음
         } 
         if (answer.join('') === value) { // join: 배열을 문자열로 바꿈 => [3, 1, 4, 6] -> '3146'(콤마가 없으면 반점이 생김) <-> split
@@ -64,7 +64,7 @@
         for (let i = 0; i < answer.length; i++) {
             const index = value.indexOf(answer[i]);
             if (index > -1) { // 일치하는 값 발견
-                if (index === 1) { // 자릿수 일치
+                if (index === i) { // 자릿수 일치
                     strike += 1;
                 } else { // 숫자만 같음
                     ball += 1; 
@@ -73,7 +73,8 @@
         }
         $logs.append(`${value}: ${strike} 스트라이크 ${ball} 볼`, document.createElement('br'));
         tries.push(value);
-        });
+        }
+    })
 </script>
 </body>
 </html>
